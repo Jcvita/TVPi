@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: "assets/reddit.png";
+    }
+
+    table.center{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5%;
+    }
+
+    td, th{
+        padding: 5%;
+    }
+    
+</style>
+<script>
+    function changeBGColor(){
+        let r = Math.random() * 255;
+        let g = Math.random() * 255;
+        let b = Math.random() * 255;
+        document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+    }
+</script>
+<body onload="changeBGColor();">
+    <div class="container">
+        <table class="center">
+            <tr>
+                <th>
+                    <img style="display:block;" width="100%" height="100%" src="assets/ythaiku.png">
+                </th>
+                <th>
+                    <img style="display:block;" width="100%" height="100%" src="assets/redditmemes.png"/>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <img style="display:block;" width="100%" height="100%" src="assets/giphy.png" />
+                </th>
+                <th>
+                    <img style="display:block;" width="100%" height="100%" src="assets/redditshower.png" />
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <img style="display:block;" width="100%" height="100%" src="assets/lights.png">
+                </th>
+                <th>
+                    <img style="display:block;" width="100%" height="100%" src="assets/drones.png"/>
+                </th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
