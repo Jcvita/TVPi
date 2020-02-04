@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+    table.center{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5%;
+    }
+
+    td, th{
+        padding: 5%;
+    }
+    
+    img{
+        display: block;
+        width: 100%;    
+    }
+
+</style>
+<script>
+    var elem = document.documentElement;
+
+    function openFullScreen(url){
+        window.open(
+            url, "TVPi",
+            "height=1080,width=1920,modal=yes,alwaysRaised=yes,titlebar=no,toolbar=no,status=no,menubar=no"
+        );
+    
+    }
+
+
+    function changeBGColor(){
+        let r = Math.random() * 255;
+        let g = Math.random() * 255;
+        let b = Math.random() * 255;
+        document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+    }
+</script>
+
+<body onload="changeBGColor();">
+    <div class="container">
+        <form action="/close/" method="post">
+            <button name="close" type="submit" style="text-align: center; align-content: center;">CLOSE CONTENT</button>
+        </form>
+    </div>
+    <div class="container">
+        <table class="center">
+             
+                <tr>
+                    <img onclick="openFullScreen('http://www.youtubehaiku.net');" src="static/ythaiku.png">
+                </tr>
+                <tr>
+                    <img src="static/redditmemes.png"/>
+                </tr>
+                <tr>
+                    <form action="/cursed/" method="post">
+                        <input type="image" src="static/giphy.png" name="giphy" value="/home/joe/Documents/TVPi/static/Cursed Images.mp4">
+                    </form>
+                </tr>
+                <tr>
+                    <img src="static/redditshower.png" />
+                </tr>
+                <tr>
+                    <img src="static/lights.png">
+                </tr>
+                <tr>
+                    <img src="static/drones.png"/>
+                </tr>
+                <tr>
+                    <img src="static/2011.png">
+                </tr>
+                <tr>
+                    <img onclick="openFullScreen('yeaboi.html')" src="static/yesbrother.png"/>
+                </tr>
+                <tr>
+                    <img src="static/stonks.png">
+                </tr>
+                <tr>
+                    <img src="static/tpose.jpg"/>
+                </tr>
+                <tr>
+                    <img src="static/add.png"/>
+                </tr>
+        </table>
+    </div>
+</body>
+</html>
