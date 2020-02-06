@@ -1,44 +1,45 @@
 from flask import Flask, render_template, redirect, url_for, request
 import cv2
 import pyautogui
-# import time
 from stack import *
-
+import requests, json
+import time
 app = Flask(__name__)
 
 STACK = make_empty_stack()
-
-
-@app.route('/')
 def site():
     return render_template('mobilesite.html')
 
 
-@app.route('/tv/')
+@app.route('/')
 def tvsite():
     while True:
         if is_empty(STACK):
             pass
         elif top(STACK) == 'cursed':
+            try:
+                pop(STACK)
+            except IndexError:
+                continue
             display_video('static/Cursed Images.mp4')
+            print(STACK)
+        elif top(STACK) == 'close':
+            try:
+                pop(STACK)
+            except IndexError:
+                continue
+            time.sleep(3)
+            pyautogui.typewrite('q')
 
 
-@app.route("/cursed/", methods=['POST', 'GET'])
-def cursed():
-    push(STACK, 'cursed')
+@app.route("/command/<cmd>", methods=['POST', 'GET'])
+def send_cmd(cmd):
+    push(STACK, cmd)
     print(STACK)
     return redirect(url_for('site'))
 
 
-@app.route("/close/", methods=['POST', 'GET'])
-def close():
-    pyautogui.typewrite('q')
-    return redirect(url_for('site'))
-
-
 def display_video(filename):
-    pop(STACK)
-
     name = 'cursed'
     framewait_ms = 30
 
